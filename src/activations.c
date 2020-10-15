@@ -15,10 +15,13 @@ void activate_matrix(matrix m, ACTIVATION a)
             double x = m.data[i*m.cols + j];
             if(a == LOGISTIC){
                 // TODO
+                m.data[i*m.cols + j] = 1 / (1 + exp(-x));
             } else if (a == RELU){
                 // TODO
+                m.data[i*m.cols + j] = (x > 0) ? x : 0;
             } else if (a == LRELU){
                 // TODO
+                m.data[i*m.cols + j] = 
             } else if (a == SOFTMAX){
                 // TODO
             }
