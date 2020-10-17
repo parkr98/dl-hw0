@@ -68,7 +68,7 @@ matrix transpose_matrix(matrix m)
     matrix t = make_matrix(m.cols, m.rows);
     for (int i = 0; i < m.rows; i++) {
         for (int j = 0; j < m.cols; j++) {
-            t.data[j*m.cols + i] = m.data[i*m.cols + j];
+            t.data[j*m.rows + i] = m.data[i*m.cols + j];
         }
     }
 
@@ -100,7 +100,7 @@ matrix matmul(matrix a, matrix b)
     for (int i = 0; i < a.rows; i++) {
         for (int k = 0; k < a.cols; k++) {
             for (int j = 0; j < b.cols; j++) {
-                c.data[i * a.rows + j] += a.data[i * a.cols + k] * b.data[k * b.cols + j];
+                c.data[i * b.cols + j] += a.data[i * a.cols + k] * b.data[k * b.cols + j];
             }
         }
     }
