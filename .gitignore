@@ -10,6 +10,7 @@ libuwnet*
 uwnet
 /mnist/*
 /cifar/*
+submit.tar.gz
 
 # OS Generated #
 .DS_Store*
